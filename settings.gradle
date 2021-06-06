@@ -1,0 +1,2 @@
+rootProject.name = "Game Suit - Challenge Chapter 4"
+include ':app'

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Game Suit - Challenge Chapter 4</string>
+    <string name="txt_player_1">Player 1</string>
+    <string name="txt_computer">Computer</string>
+    <string name="log_player1_batu">initView : Player 1 Memilih Batu</string>
+    <string name="log_player1_gunting">initView : Player 1 Memilih Gunting</string>
+    <string name="log_player1_kertas">initView : Player 1 Memilih Kertas</string>
+</resources>
