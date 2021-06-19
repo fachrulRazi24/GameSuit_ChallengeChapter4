@@ -13,9 +13,9 @@ class MainActivity : AppCompatActivity() {
     private val TAG = MainActivity::class.java.simpleName
     private lateinit var binding: ActivityMainBinding
 
-    private var isGameFinished: Boolean = false
     private var player: Int = -1
     private var computer: Int = -1
+    private var isGameFinished: Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,12 +54,27 @@ class MainActivity : AppCompatActivity() {
         }
         binding.ivIcRefresh.setOnClickListener {
             Log.d(TAG, "Reset Game, Enjoy !")
-            if (isGameFinished) {
-                resetGame()
-            } else {
-                startGame()
-            }
+            isGameFinished = true
+            resetGame()
         }
+    }
+
+    private fun resetGame() {
+        isGameFinished = false
+        player = -1
+        computer = -1
+        binding.ivIcVs.setImageResource(R.drawable.ic_vs)
+        binding.ivIcRefresh.setImageResource(0)
+        refreshGameState()
+    }
+
+    private fun refreshGameState (){
+        binding.ivIcComputerScissor.setBackgroundResource(0)
+        binding.ivIcComputerRock.setBackgroundResource(0)
+        binding.ivIcComputerPaper.setBackgroundResource(0)
+        binding.ivIcPlayerScissor.setBackgroundResource(0)
+        binding.ivIcPlayerRock.setBackgroundResource(0)
+        binding.ivIcPlayerPaper.setBackgroundResource(0)
     }
 
     private fun startGame() {
@@ -74,6 +89,7 @@ class MainActivity : AppCompatActivity() {
             binding.ivIcVs.setImageResource(R.drawable.ic_result_player_win)
         }
         isGameFinished = true
+        binding.ivIcRefresh.setImageResource(R.drawable.ic_refresh_white)
     }
 
     private fun randomizeComputer() {
@@ -89,13 +105,13 @@ class MainActivity : AppCompatActivity() {
                 binding.ivIcPlayerScissor.setBackgroundResource(0)
             }
             GameCharacter.PAPER -> {
+                binding.ivIcPlayerRock.setBackgroundResource(0)
                 binding.ivIcPlayerPaper.setBackgroundResource(R.drawable.bg_action_button)
                 binding.ivIcPlayerScissor.setBackgroundResource(0)
-                binding.ivIcPlayerRock.setBackgroundResource(0)
             }
             GameCharacter.SCISSOR -> {
-                binding.ivIcPlayerScissor.setBackgroundResource(R.drawable.bg_action_button)
                 binding.ivIcPlayerRock.setBackgroundResource(0)
+                binding.ivIcPlayerScissor.setBackgroundResource(R.drawable.bg_action_button)
                 binding.ivIcPlayerPaper.setBackgroundResource(0)
             }
         }
@@ -105,29 +121,22 @@ class MainActivity : AppCompatActivity() {
         when (GameCharacter.fromInt(computer)) {
             GameCharacter.ROCK -> {
                 Log.d(TAG, "Computer Memilih Batu")
-                binding.ivIcComputerScissor.setBackgroundResource(0)
                 binding.ivIcComputerRock.setBackgroundResource(R.drawable.bg_action_button)
+                binding.ivIcComputerScissor.setBackgroundResource(0)
                 binding.ivIcComputerPaper.setBackgroundResource(0)
             }
             GameCharacter.PAPER -> {
                 Log.d(TAG, "Computer Memilih Kertas")
-                binding.ivIcComputerScissor.setBackgroundResource(0)
                 binding.ivIcComputerRock.setBackgroundResource(0)
+                binding.ivIcComputerScissor.setBackgroundResource(0)
                 binding.ivIcComputerPaper.setBackgroundResource(R.drawable.bg_action_button)
             }
             GameCharacter.SCISSOR -> {
                 Log.d(TAG, "Computer Memilih Gunting")
-                binding.ivIcComputerScissor.setBackgroundResource(R.drawable.bg_action_button)
                 binding.ivIcComputerRock.setBackgroundResource(0)
+                binding.ivIcComputerScissor.setBackgroundResource(R.drawable.bg_action_button)
                 binding.ivIcComputerPaper.setBackgroundResource(0)
             }
         }
-    }
-
-    private fun resetGame() {
-        isGameFinished = false
-        player = 0
-        computer = 0
-        setClickEvent()
     }
 }
