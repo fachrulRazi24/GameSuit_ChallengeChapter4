@@ -1,6 +1,6 @@
 package com.example.binaracademy.gamesuit_challengechapter4.enum
 
-enum class GameCharacter(val value : Int) {
+enum class GameCharacter(val value: Int) {
     ROCK(0),
     PAPER(1),
     SCISSOR(2);

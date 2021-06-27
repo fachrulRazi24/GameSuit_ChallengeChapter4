@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/ic_bg_mainpage"
+    tools:context=".ui.game.PlayerActivity">
+
+  <ImageView
+      android:id="@+id/iv_title"
+      android:layout_width="@dimen/_160sdp"
+      android:layout_height="@dimen/_120sdp"
+      android:layout_marginTop="@dimen/_10sdp"
+      android:src="@drawable/ic_title_game"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <LinearLayout
+      android:id="@+id/ll_player"
+      android:layout_width="@dimen/_80sdp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/_10sdp"
+      android:layout_marginBottom="@dimen/_80sdp"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toLeftOf="@id/tv_start_battle"
+      app:layout_constraintTop_toBottomOf="@id/iv_title">
+
+    <TextView
+        android:id="@+id/tv_player_name"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/font_road_rage"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp"
+        tools:text="Player Name" />
+
+    <FrameLayout
+        android:id="@+id/fl_player_paper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        tools:background="@drawable/bg_action_button">
+
+      <ImageView
+          android:id="@+id/iv_ic_player_paper"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/_6sdp"
+          android:layout_marginBottom="@dimen/_6sdp"
+          android:src="@drawable/ic_paper" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_player_scissor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        tools:background="@drawable/bg_action_button">
+
+      <ImageView
+          android:id="@+id/iv_ic_player_scissor"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/_6sdp"
+          android:layout_marginBottom="@dimen/_6sdp"
+          android:src="@drawable/ic_scissor" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_player_rock"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:background="@drawable/bg_action_button">
+
+      <ImageView
+          android:id="@+id/iv_ic_player_rock"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/_6sdp"
+          android:layout_marginBottom="@dimen/_6sdp"
+          android:src="@drawable/ic_rock" />
+    </FrameLayout>
+  </LinearLayout>
+
+  <TextView
+      android:id="@+id/tv_start_battle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="START\n BATTLE"
+      android:textAlignment="center"
+      android:textSize="@dimen/_24ssp"
+      android:textColor="@color/loading_1"
+      android:fontFamily="@font/font_road_rage"
+      app:layout_constraintBottom_toBottomOf="@id/ll_player"
+      app:layout_constraintLeft_toRightOf="@id/ll_player"
+      app:layout_constraintRight_toLeftOf="@id/ll_computer"
+      app:layout_constraintTop_toTopOf="@id/ll_player" />
+
+
+  <LinearLayout
+      android:id="@+id/ll_computer"
+      android:layout_width="@dimen/_90sdp"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/_10sdp"
+      android:layout_marginBottom="@dimen/_80sdp"
+      android:orientation="vertical"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toRightOf="@id/tv_start_battle"
+      app:layout_constraintRight_toRightOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/iv_title">
+
+    <TextView
+        android:id="@+id/tv_player2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fontFamily="@font/font_road_rage"
+        android:maxLines="1"
+        android:text="PLAYER 2"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_16ssp" />
+
+    <FrameLayout
+        android:id="@+id/fl_computer_paper"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        tools:background="@drawable/bg_action_button">
+
+      <ImageView
+          android:id="@+id/iv_ic_computer_paper"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/_6sdp"
+          android:layout_marginBottom="@dimen/_6sdp"
+          android:src="@drawable/ic_paper" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_computer_scissor"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        tools:background="@drawable/bg_action_button">
+
+      <ImageView
+          android:id="@+id/iv_ic_computer_scissor"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/_6sdp"
+          android:layout_marginBottom="@dimen/_6sdp"
+          android:src="@drawable/ic_scissor" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_computer_rock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        tools:background="@drawable/bg_action_button">
+
+      <ImageView
+          android:id="@+id/iv_ic_computer_rock"
+          android:layout_width="100dp"
+          android:layout_height="100dp"
+          android:layout_gravity="center"
+          android:layout_marginTop="@dimen/_6sdp"
+          android:layout_marginBottom="@dimen/_6sdp"
+          android:src="@drawable/ic_rock" />
+    </FrameLayout>
+  </LinearLayout>
+
+  <ImageView
+      android:id="@+id/iv_ic_refresh"
+      android:layout_width="70dp"
+      android:layout_height="70dp"
+      android:layout_marginStart="320dp"
+      android:layout_marginEnd="10dp"
+      android:layout_marginBottom="10dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      tools:src="@drawable/ic_refresh_red" />
+
+  <ImageView
+      android:id="@+id/iv_ic_exit"
+      android:layout_width="70dp"
+      android:layout_height="70dp"
+      android:layout_marginStart="10dp"
+      android:layout_marginEnd="320dp"
+      android:layout_marginBottom="10dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toLeftOf="parent"
+      app:layout_constraintRight_toRightOf="parent"
+      tools:src="@drawable/ic_close_red" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
